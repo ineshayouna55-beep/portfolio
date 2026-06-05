@@ -1,5 +1,5 @@
 
-  // ── DATA ──
+  
   
 
   const defaultProjects = [
@@ -23,7 +23,7 @@
     }
   ];
 
-  // ── RENDER PROJECTS ──
+  
   function renderProjects() {
     const projects = JSON.parse(localStorage.getItem('portfolio_projects') || 'null') || defaultProjects;
     const container = document.getElementById('projects-container');
@@ -41,7 +41,7 @@
     observeReveal();
   }
 
-  // ── AUTH ──
+  
   function openLoginModal() {
     document.getElementById('login-modal').classList.add('open');
     setTimeout(() => document.getElementById('admin-pw').focus(), 300);
@@ -76,9 +76,8 @@
   }
 }
 
-  // ── ADMIN PANEL ──
   function openAdmin() {
-    // Pré-remplir les champs avec le contenu actuel
+    
     const name = document.getElementById('hero-name');
     document.getElementById('e-name').value = name.innerHTML.replace(/<br\/?>/g,'').replace(/<em>/g,'').replace(/<\/em>/g,'').trim().split(/\s+/).join(' ');
     document.getElementById('e-sub').value = document.getElementById('hero-sub').textContent;
@@ -103,20 +102,13 @@
   }
 
   function saveChanges() {
-    // Nom hero
     const nameParts = document.getElementById('e-name').value.trim().split(' ');
     const last = nameParts.pop();
     document.getElementById('hero-name').innerHTML = nameParts.join(' ') + '<br/><em>' + last + '</em>';
-
-    // Sous-titre
     document.getElementById('hero-sub').textContent = document.getElementById('e-sub').value;
-
-    // About
     document.getElementById('about-p1').textContent = document.getElementById('e-p1').value;
     document.getElementById('about-p2').textContent = document.getElementById('e-p2').value;
     document.getElementById('about-p3').textContent = document.getElementById('e-p3').value;
-
-    // Objectives
     document.getElementById('obj-1-title').textContent = document.getElementById('e-o1t').value;
     document.getElementById('obj-1-desc').textContent = document.getElementById('e-o1d').value;
     document.getElementById('obj-2-title').textContent = document.getElementById('e-o2t').value;
@@ -124,7 +116,7 @@
     document.getElementById('obj-3-title').textContent = document.getElementById('e-o3t').value;
     document.getElementById('obj-3-desc').textContent = document.getElementById('e-o3d').value;
 
-    // Sauvegarde locale
+    
     localStorage.setItem('portfolio_content', JSON.stringify({
       name: document.getElementById('e-name').value,
       sub: document.getElementById('e-sub').value
@@ -134,8 +126,6 @@
     c.style.display = 'block';
     setTimeout(() => c.style.display = 'none', 2500);
   }
-
-  // ── CONTACT FORM ──
   function submitContact() {
     const name = document.getElementById('c-name').value.trim();
     const email = document.getElementById('c-email').value.trim();
@@ -153,14 +143,13 @@
       return;
     }
 
-    // Simulation envoi (sans serveur)
+    
     el.className = 'ok';
     el.textContent = '✓ Message reçu ! Je vous réponds sous 24h.';
     ['c-name','c-email','c-subject','c-msg'].forEach(id => document.getElementById(id).value = '');
     setTimeout(() => { el.style.display = 'none'; }, 5000);
   }
 
-  // ── SCROLL REVEAL ──
   function observeReveal() {
     const obs = new IntersectionObserver((entries) => {
       entries.forEach((e, i) => {
@@ -173,11 +162,9 @@
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   }
 
-  // ── INIT ──
   renderProjects();
   observeReveal();
 
-  // Fermer modal en cliquant dehors
   document.getElementById('login-modal').addEventListener('click', function(e) {
     if (e.target === this) closeLoginModal();
   });
