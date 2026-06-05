@@ -168,3 +168,6 @@
   document.getElementById('login-modal').addEventListener('click', function(e) {
     if (e.target === this) closeLoginModal();
   });
+if (localStorage.getItem('admin_token')) {
+  openAdmin();
+}
