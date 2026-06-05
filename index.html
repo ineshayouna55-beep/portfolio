@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio – Dev Web</title>
+  <link href="style.css" rel="stylesheet"/>
+<nav>
+  <div class="logo">&lt;<span>dev</span>/&gt;</div>
+    <ul class="nav-links">
+    <li><a href="#about">À propos</a></li>
+    <li><a href="#objectifs">Objectifs</a></li>
+    <li><a href="#projets">Projets</a></li>
+    <li><a href="#contact">Contact</a></li>
+    </ul>
+   <div class="nav-actions">
+    <a href="https://github.com/ton-username/portfolio" target="_blank" class="btn-cv">⌥ Voir le code</a>
+    <button class="btn-admin" onclick="openLoginModal()">Admin</button>
+   </div>
+
+</nav>
+<!-- HERO -->
+<!-- HERO -->
+<section id="hero">
+  <p class="hero-tag">// Portfolio — Développeur Web</p>
+  <h1 class="hero-name" id="hero-name">Ines<br/><em>Hayouna</em></h1>
+  <p class="hero-sub" id="hero-sub">Étudiant en développement web passionné par la création d'interfaces modernes et d'APIs robustes.</p>
+  <div class="hero-cta">
+    <a href="cv.pdf" download class="btn-primary">↓ Télécharger CV</a>
+  </div>
+  <div class="hero-line"></div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <p class="section-title reveal">// 01 — À propos</p>
+  <h2 class="reveal">Qui suis-je ?</h2>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p id="about-p1">Je suis un développeur web en formation, ayant acquis des bases solides en <strong>HTML, CSS, JavaScript</strong> et <strong>React</strong> côté front-end.</p>
+      <p id="about-p2">Du côté back-end, j'ai travaillé avec <strong>Node.js / Express</strong> et les bases de données <strong>NoSQL</strong> (MongoDB). Je comprends les échanges <strong>HTTP</strong>, les API REST et la relation front/back.</p>
+      <p id="about-p3">Je suis en fin de formation et prêt à rejoindre une équipe pour continuer à progresser.</p>
+    </div>
+    <div class="reveal">
+      <p class="section-title">// Stack technique</p>
+      <div class="skills-list">
+        <span class="skill-tag">HTML5</span>
+        <span class="skill-tag">CSS3</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">React</span>
+        <span class="skill-tag">Node.js</span>
+        <span class="skill-tag">Express</span>
+        <span class="skill-tag">MongoDB</span>
+        <span class="skill-tag">REST API</span>
+        <span class="skill-tag">HTTP</span>
+        <span class="skill-tag">Git</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OBJECTIFS -->
+<section id="objectifs">
+  <p class="section-title reveal">// 02 — Objectifs</p>
+  <h2 class="reveal">Mes ambitions</h2>
+  <div class="obj-grid">
+    <div class="obj-card reveal" id="obj-1">
+      <div class="obj-num">01</div>
+      <h3 id="obj-1-title">Devenir Fullstack</h3>
+      <p id="obj-1-desc">Maîtriser aussi bien le front que le back-end pour concevoir des applications complètes de A à Z.</p>
+    </div>
+    <div class="obj-card reveal" id="obj-2">
+      <div class="obj-num">02</div>
+      <h3 id="obj-2-title">Intégrer une équipe</h3>
+      <p id="obj-2-desc">Rejoindre une startup ou une agence pour apprendre en conditions réelles, contribuer et évoluer rapidement.</p>
+    </div>
+    <div class="obj-card reveal" id="obj-3">
+      <div class="obj-num">03</div>
+      <h3 id="obj-3-title">Créer mes propres projets</h3>
+      <p id="obj-3-desc">Développer des side-projects concrets pour continuer à apprendre et construire un portfolio solide.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJETS -->
+<section id="projets">
+  <p class="section-title reveal">// 03 — Projets</p>
+  <h2 class="reveal">Ce que j'ai construit</h2>
+  <div class="projects-grid" id="projects-container">
+    <!-- Injecté par JS -->
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <p class="section-title reveal">// 04 — Contact</p>
+  <h2 class="reveal">Travaillons ensemble</h2>
+  <div class="contact-layout">
+    <div class="contact-info reveal">
+      <p>Tu as un projet, une opportunité ou juste envie d'échanger ? N'hésite pas à m'envoyer un message, je réponds rapidement.</p>
+      <p><strong>Email</strong><br/>ineshayouna55@gmail.com</p>
+      <p><strong>Disponibilité</strong><br/>Open to work — dès maintenant.</p>
+      <p><strong>Localisation</strong><br/>Alger, Algérie 🇩🇿</p>
+    </div>
+    <div class="contact-form reveal">
+      <div class="form-row">
+        <div class="form-field">
+          <label>Nom</label>
+          <input type="text" id="c-name" placeholder="Jean Dupont"/>
+        </div>
+        <div class="form-field">
+          <label>Email</label>
+          <input type="email" id="c-email" placeholder="jean@mail.com"/>
+        </div>
+      </div>
+      <div class="form-field">
+        <label>Sujet</label>
+        <input type="text" id="c-subject" placeholder="Opportunité de stage"/>
+      </div>
+      <div class="form-field">
+        <label>Message</label>
+        <textarea id="c-msg" rows="5" placeholder="Bonjour, je souhaitais..."></textarea>
+      </div>
+      <p id="form-msg"></p>
+      <button class="btn-primary" onclick="submitContact()" style="align-self:flex-start">Envoyer →</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <span>&lt;dev/&gt; — Portfolio 2026</span>
+  <span>Fait avec les 3 pilliers du Web: HTML · CSS · JS</span>
+</footer>
+
+<!-- MODAL LOGIN ADMIN -->
+<div class="modal-overlay" id="login-modal">
+  <div class="modal-box">
+    <h3>Espace Admin</h3>
+    <p>Connecte-toi pour modifier le contenu du portfolio.</p>
+    <p id="login-err">Mot de passe incorrect.</p>
+    <input type="password" id="admin-pw" placeholder="Mot de passe..." onkeydown="if(event.key==='Enter')tryLogin()"/>
+    <div class="modal-actions">
+      <button class="btn-outline" onclick="closeLoginModal()">Annuler</button>
+      <button class="btn-primary" onclick="tryLogin()">Entrer</button>
+    </div>
+  </div>
+</div>
+
+<!-- PANEL ADMIN -->
+<div id="admin-panel">
+  <button class="admin-close" onclick="closeAdmin()">✕</button>
+  <h3>Panel Admin</h3>
+  <p>// Mode édition actif</p>
+
+  <div class="admin-section">
+    <label>Ton nom (Hero)</label>
+    <input id="e-name" type="text"/>
+    <label>Sous-titre Hero</label>
+    <textarea id="e-sub" rows="2"></textarea>
+  </div>
+
+  <div class="admin-section">
+    <label>À propos — paragraphe 1</label>
+    <textarea id="e-p1" rows="3"></textarea>
+    <label>À propos — paragraphe 2</label>
+    <textarea id="e-p2" rows="3"></textarea>
+    <label>À propos — paragraphe 3</label>
+    <textarea id="e-p3" rows="2"></textarea>
+  </div>
+
+  <div class="admin-section">
+    <label>Objectif 1 — Titre</label>
+    <input id="e-o1t" type="text"/>
+    <label>Objectif 1 — Desc</label>
+    <textarea id="e-o1d" rows="2"></textarea>
+    <label>Objectif 2 — Titre</label>
+    <input id="e-o2t" type="text"/>
+    <label>Objectif 2 — Desc</label>
+    <textarea id="e-o2d" rows="2"></textarea>
+    <label>Objectif 3 — Titre</label>
+    <input id="e-o3t" type="text"/>
+    <label>Objectif 3 — Desc</label>
+    <textarea id="e-o3d" rows="2"></textarea>
+  </div>
+
+  <button class="admin-save" onclick="saveChanges()">💾 Sauvegarder</button>
+  <p id="save-confirm">✓ Modifications appliquées !</p>
+  <br/><br/>
+  <button class="btn-outline" onclick="closeAdmin()" style="width:100%;text-align:center">Déconnexion</button>
+</div>
+<script src="scripts.js"></script>
+</body>
+</html>
