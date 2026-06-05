@@ -162,12 +162,15 @@
     document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
   }
 
-  renderProjects();
-  observeReveal();
+renderProjects();
+observeReveal();
 
-  document.getElementById('login-modal').addEventListener('click', function(e) {
-    if (e.target === this) closeLoginModal();
-  });
-if (localStorage.getItem('admin_token')) {
-  openAdmin();
-}
+document.getElementById('login-modal').addEventListener('click', function(e) {
+  if (e.target === this) closeLoginModal();
+});
+
+window.addEventListener('load', () => {
+  if (localStorage.getItem('admin_token')) {
+    openAdmin();
+  }
+});
